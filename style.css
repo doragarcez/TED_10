@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #000;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  color: #3b1030;
+}
+
+.container {
+  width: 100%;
+  max-width: 560px;
+  padding: 32px 40px 28px;
+  background: #cc79a7;
+  border-radius: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.emoji {
+  font-size: 30px;
+}
+
+.jogo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+/* Tabuleiro */
+.tabuleiro {
+  position: relative;
+  flex: 0 1 300px;
+  min-width: 0;
+  aspect-ratio: 1 / 2;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 4px solid #3b1030;
+}
+
+.tabuleiro canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Painel lateral */
+.painel {
+  flex: 0 0 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bloco {
+  background: #f7e3ee;
+  border-radius: 22px;
+  padding: 10px 8px;
+}
+
+.rotulo {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.valor {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#proxima {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Telas sobre o tabuleiro (pausa e fim de jogo) */
+.tela {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(59, 16, 48, 0.88);
+  color: #f7e3ee;
+}
+
+.tela[hidden] {
+  display: none;
+}
+
+.titulo-tela {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.subtitulo {
+  font-size: 17px;
+}
+
+.subtitulo strong {
+  font-size: 24px;
+}
+
+button {
+  margin-top: 6px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background: #f7e3ee;
+  color: #3b1030;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #fff;
+}
+
+button:focus-visible {
+  outline: 3px solid #cc79a7;
+  outline-offset: 2px;
+}
+
+.dica {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 520px) {
+  .container {
+    padding: 28px 16px 24px;
+    border-radius: 60px;
+  }
+
+  .jogo {
+    gap: 10px;
+  }
+
+  .painel {
+    flex-basis: 96px;
+    gap: 8px;
+  }
+
+  .valor {
+    font-size: 20px;
+  }
+
+  .titulo-tela {
+    font-size: 26px;
+  }
+}

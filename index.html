@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1><span class="emoji" aria-hidden="true">🧱</span> Tetris</h1>
+
+    <div class="jogo">
+      <div class="tabuleiro">
+        <canvas id="tabuleiro" width="300" height="600" aria-label="Tabuleiro do Tetris"></canvas>
+
+        <div class="tela" id="pausa" hidden>
+          <p class="titulo-tela">PAUSADO</p>
+          <p class="subtitulo">Aperte P para continuar</p>
+        </div>
+
+        <div class="tela" id="fim" hidden>
+          <p class="titulo-tela">GAMEOVER</p>
+          <p class="subtitulo">Você fez <strong id="pontos-final">0</strong> pontos</p>
+          <button type="button" id="btn-reiniciar">Jogar de novo</button>
+        </div>
+      </div>
+
+      <aside class="painel">
+        <div class="bloco">
+          <p class="rotulo">Próxima</p>
+          <canvas id="proxima" width="120" height="120" aria-label="Próxima peça"></canvas>
+        </div>
+
+        <div class="bloco">
+          <p class="rotulo">Pontuação</p>
+          <p class="valor" id="pontos">0</p>
+        </div>
+
+        <div class="bloco">
+          <p class="rotulo">Linhas</p>
+          <p class="valor" id="linhas">0</p>
+        </div>
+
+        <div class="bloco">
+          <p class="rotulo">Nível</p>
+          <p class="valor" id="nivel">1</p>
+        </div>
+      </aside>
+    </div>
+
+    <p class="dica">
+      ← → mover &nbsp;|&nbsp; ↑ girar &nbsp;|&nbsp; ↓ descer &nbsp;|&nbsp; Espaço: cair direto &nbsp;|&nbsp; P: pausar
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
